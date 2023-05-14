@@ -28,7 +28,7 @@ const DestinationsDatabase = [
   },
   {
     name: "Waduk Sermo",
-    location: "Plunyon Kali Kuning Desa Umbulharjo",
+    location: "Plunyon Kali Kuning Desa Umbulharjo Jogjakarta",
     title: "Waduk Sermo",
     photo: require("../assets/waduk-sermo.png"),
     rating: 4.3,
@@ -37,4 +37,135 @@ const DestinationsDatabase = [
   },
 ];
 
-export { DestinationDetailProps, DestinationsDatabase };
+const ReviewsDatabase = [
+  {
+    title: "OG Itinerary Plan",
+    photo: require("../assets/destination_placeholder.png"),
+    location: "Jogjakarta",
+    days: 3,
+    type: "Nature",
+    price: "3.000k",
+    description: "Liburan kuliah semester 5",
+    likes: 10,
+    duplicates: 10,
+    reviewerName: "John Doe",
+    reviewerPhoto: require("../assets/profilepic.png"),
+    reviewerFollowers: 12434,
+    reviewContent: `In need of some travel inspiration? Look no further! I recently discovered Munduk Waterfall and it has quickly become my top recommendation for fellow adventurers. From vibrant cities to serene landscapes, this place has something for everyone. 🗺️🌴 #TravelRecommendation #MustVisitDestination #AdventureAwaits`,
+  },
+  {
+    title: "Jalan jalan di Jogja",
+    photo: require("../assets/waduk-sermo.png"),
+    location: "Jogjakarta",
+    days: 3,
+    type: "Nature",
+    price: "3.000k",
+    description: "Liburan kuliah semester 5",
+    likes: 10,
+    duplicates: 10,
+    reviewerName: "Bahar",
+    reviewerFollowers: Math.round(Math.random() * 10000),
+    reviewerPhoto: require("../assets/profilepic.png"),
+    reviewContent: `Ini seru sekali, aku suka aku suka!!`,
+  },
+  {
+    title: "Itinerary Plan 12",
+    photo: require("../assets/destination_placeholder.png"),
+    location: "Jogjakarta",
+    days: 3,
+    type: "Nature",
+    price: "3.000k",
+    description: "Liburan kuliah semester 5",
+    likes: 10,
+    duplicates: 10,
+    reviewerName: "Dhiya Maharani",
+    reviewerFollowers: Math.round(Math.random() * 10000),
+    reviewerPhoto: require("../assets/icon-square.png"),
+    reviewContent: `I am cool and i want to travel recommendation i like you guys lets go brothers 🗺️🌴 #TravelRecommendation #MustVisitDestination #AdventureAwaits`,
+  },
+  {
+    title: "This is Real",
+    photo: require("../assets/hutan.png"),
+    location: "Jogjakarta",
+    days: 3,
+    type: "Nature",
+    price: "3.000k",
+    description: "Liburan kuliah semester 5",
+    likes: 10,
+    duplicates: 10,
+    reviewerName: "John Doe",
+    reviewerFollowers: Math.round(Math.random() * 10000),
+    reviewerPhoto: require("../assets/adaptive-icon.png"),
+    reviewContent: `In need of some travel inspiration? Look no further! I recently discovered Munduk Waterfall and it has quickly become my top recommendation for fellow adventurers. From vibrant cities to serene landscapes, this place has something for everyone. 🗺️🌴 #TravelRecommendation #MustVisitDestination #AdventureAwaits`,
+  },
+];
+
+const ItineraryDatabase = [
+  {
+    id: 0,
+    title: "Itinerary Plan 1",
+    photo: require("../assets/destination_placeholder.png"),
+    location: "Jogjakarta",
+    days: 3,
+    type: "Nature",
+    price: "3.000k",
+    description: "Liburan kuliah semester 5",
+    destinations: [
+      {
+        day: 1,
+        id: 0,
+      },
+      {
+        day: 1,
+        id: 2,
+      },
+      {
+        day: 2,
+        id: 2,
+      },
+      {
+        day: 2,
+        id: 1,
+      },
+      {
+        day: 3,
+        id: 0,
+      },
+    ],
+  },
+  {
+    id: 1,
+    title: "The Plan",
+    days: 2,
+    photo: require("../assets/waduk-sermo.png"),
+    location: "Jogjakarta",
+    type: "All",
+    price: "5.000k",
+    description: "Healing trip",
+    destinations: [
+      {
+        day: 1,
+        id: 0,
+      },
+      {
+        day: 1,
+        id: 2,
+      },
+      {
+        day: 1,
+        id: 1,
+      },
+      {
+        day: 2,
+        id: 2,
+      },
+    ],
+  },
+];
+
+export {
+  DestinationDetailProps,
+  DestinationsDatabase,
+  ReviewsDatabase,
+  ItineraryDatabase,
+};

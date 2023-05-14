@@ -64,12 +64,11 @@ const DestinationDetailScreen = ({route, navigation}) => {
   );
 };
 
-const ItineraryDetailScreen = () => {
-  const props = {};
-
+const ItineraryDetailScreen = ({route, navigation}) => {
+  const {id} = route.params;
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <ItineraryDetail />
+      <ItineraryDetail id={id} />
     </View>
   );
 };

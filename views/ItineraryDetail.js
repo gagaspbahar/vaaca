@@ -1,11 +1,22 @@
-import { Text, View, Image, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
+import {
+  Text,
+  View,
+  Image,
+  StyleSheet,
+  ScrollView,
+  TouchableOpacity,
+} from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { Divider } from "react-native-elements";
 import { useState, useEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
-import { DestinationDetailProps } from "../constants/props";
+import { ItineraryDatabase, DestinationsDatabase } from "../constants/props";
 
 function ItineraryDetail(props) {
+  console.log(props);
+
+  const itinerary = ItineraryDatabase[props.id];
+  console.log(itinerary);
 
   const [selectedDay, setSelectedDay] = useState(0);
 
@@ -17,9 +28,7 @@ function ItineraryDetail(props) {
       setSelectedDay(i);
     };
 
-    useEffect(() => {
-      
-    }, [selected])
+    useEffect(() => {}, [selected]);
 
     for (let i = 0; i < props.day; i++) {
       days.push(
@@ -38,7 +47,7 @@ function ItineraryDetail(props) {
               color: selected == i ? "#3a0ca3" : "#d9d9d9",
             }}
           >
-            Day {i+1}
+            Day {i + 1}
           </Text>
         </TouchableOpacity>
       );
@@ -48,33 +57,36 @@ function ItineraryDetail(props) {
 
   const DestinationComponent = (props) => {
     let destinations = [];
+    const db = DestinationsDatabase;
 
     const handleItineraryPress = (props) => {
       navigation.navigate("destination-detail", {
-        // title: "test",
-        // photo: props.photo,
-        // location: props.location,
-        // rating: props.rating,
-        // description: props.description,
         id: props.id,
       });
-    }
+    };
 
     for (let i = 0; i < props.destinations.length; i++) {
-      if(selectedDay == props.destinations[i].day - 1) {
+      if (selectedDay == props.destinations[i].day - 1) {
         destinations.push(
-          <TouchableOpacity key={i} onPress={
-            () => handleItineraryPress({
-              id: props.destinations[i].id,
-            })
-          }>
+          <TouchableOpacity
+            key={i}
+            onPress={() =>
+              handleItineraryPress({
+                id: props.destinations[i].id,
+              })
+            }
+          >
             <Image
-              source={require("../assets/destination_placeholder.png")}
+              source={db[props.destinations[i].id].photo}
               style={styles.destinationImage}
             />
-            <Text style={{
-              fontFamily: "Montserrat_700Bold",
-            }}>{props.destinations[i].name}</Text>
+            <Text
+              style={{
+                fontFamily: "Montserrat_700Bold",
+              }}
+            >
+              {db[props.destinations[i].id].title}
+            </Text>
             <View
               style={{
                 flexDirection: "row",
@@ -82,10 +94,15 @@ function ItineraryDetail(props) {
               }}
             >
               <Ionicons name="location" size={18} />
-              <Text style={{
-                marginLeft: 5,
-                fontFamily: "Montserrat_400Regular"
-              }}>{props.destinations[i].location}</Text>
+              <Text
+                style={{
+                  marginLeft: 5,
+                  fontFamily: "Montserrat_400Regular",
+                  width: "80%"
+                }}
+              >
+                {db[props.destinations[i].id].location}
+              </Text>
             </View>
             <Divider
               width={2}
@@ -146,7 +163,7 @@ function ItineraryDetail(props) {
               marginLeft: 10,
             }}
           >
-            Itinerary Name
+            {itinerary.title}
           </Text>
         </View>
         <View
@@ -191,7 +208,7 @@ function ItineraryDetail(props) {
                 marginRight: 10,
               }}
             >
-              {DayComponent({ day: 3 })}
+              {DayComponent({ day: itinerary.days })}
             </View>
             <Divider orientation="vertical" width={2} />
             <View
@@ -199,26 +216,7 @@ function ItineraryDetail(props) {
                 marginLeft: 10,
               }}
             >
-              {DestinationComponent({ destinations: [
-                {
-                  id: 0,
-                  name: "Museum Ullen Sentalu",
-                  location: "Jl. Boyong No.KM 25, Kaliurang, Hargobinangun",
-                  day: 1
-                },
-                {
-                  id: 1,
-                  name: "Museum Ullen Sentalu 2",
-                  location: "Jl. Boyong No.KM 26, Kaliurang, Hargobinangun",
-                  day: 1
-                },
-                {
-                  id: 2,
-                  name: "Museum Ullen Sentalu 3",
-                  location: "Jl. Boyong No.KM 25, Kaliurang, Hargobinangun",
-                  day: 2
-                },
-              ] })}
+              {DestinationComponent({ destinations: itinerary.destinations })}
             </View>
           </View>
         </ScrollView>
@@ -229,9 +227,9 @@ function ItineraryDetail(props) {
 
 const styles = StyleSheet.create({
   destinationImage: {
-    maxWidth: "auto",
-    minWidth: "40%",
-    maxHeight: 150,
+    // maxWidth: "auto",
+    width: "80%",
+    height: 125,
     // borderRadius: 10,
     resizeMode: "cover",
   },

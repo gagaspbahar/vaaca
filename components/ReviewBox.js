@@ -38,7 +38,7 @@ function RatingBox(props) {
         }}
       >
         <Image
-          source={require("../assets/profilepic.png")}
+          source={props.reviewerPhoto}
           style={{
             width: 35,
             height: 35,

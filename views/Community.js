@@ -5,87 +5,11 @@ import ReviewBox  from "../components/ReviewBox";
 import { Ionicons } from "@expo/vector-icons";
 import { ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { ReviewsDatabase } from "../constants/props";
 
 function Community() {
   const navigation = useNavigation();
-  const plans = [
-    {
-      title: "Itinerary Plan 1",
-      photo: require("../assets/destination_placeholder.png"),
-      location: "Jogjakarta",
-      days: 3,
-      type: "Nature",
-      price: "3.000k",
-      description: "Liburan kuliah semester 5",
-      likes: 10,
-      duplicates: 10,
-      reviewerName: "John Doe",
-      reviewerPhoto: require("../assets/profilepic.png"),
-      reviewerFollowers: 12434,
-      reviewContent: `In need of some travel inspiration? Look no further! I recently discovered Munduk Waterfall and it has quickly become my top recommendation for fellow adventurers. From vibrant cities to serene landscapes, this place has something for everyone. 🗺️🌴 #TravelRecommendation #MustVisitDestination #AdventureAwaits`
-    },
-    {
-      title: "Itinerary Plan 1",
-      photo: require("../assets/destination_placeholder.png"),
-      location: "Jogjakarta",
-      days: 3,
-      type: "Nature",
-      price: "3.000k",
-      description: "Liburan kuliah semester 5",
-      likes: 10,
-      duplicates: 10,
-      reviewerName: "John Doe",
-      reviewerFollowers: 12434,
-      reviewerPhoto: require("../assets/profilepic.png"),
-      reviewContent: `In need of some travel inspiration? Look no further! I recently discovered Munduk Waterfall and it has quickly become my top recommendation for fellow adventurers. From vibrant cities to serene landscapes, this place has something for everyone. 🗺️🌴 #TravelRecommendation #MustVisitDestination #AdventureAwaits`
-      
-    },
-    {
-      title: "Itinerary Plan 1",
-      photo: require("../assets/destination_placeholder.png"),
-      location: "Jogjakarta",
-      days: 3,
-      type: "Nature",
-      price: "3.000k",
-      description: "Liburan kuliah semester 5",
-      likes: 10,
-      duplicates: 10,
-      reviewerName: "John Doe",
-      reviewerFollowers: 12434,
-      reviewerPhoto: require("../assets/profilepic.png"),
-      reviewContent: `In need of some travel inspiration? Look no further! I recently discovered Munduk Waterfall and it has quickly become my top recommendation for fellow adventurers. From vibrant cities to serene landscapes, this place has something for everyone. 🗺️🌴 #TravelRecommendation #MustVisitDestination #AdventureAwaits`
-    },
-    {
-      title: "Itinerary Plan 1",
-      photo: require("../assets/destination_placeholder.png"),
-      location: "Jogjakarta",
-      days: 3,
-      type: "Nature",
-      price: "3.000k",
-      description: "Liburan kuliah semester 5",
-      likes: 10,
-      duplicates: 10,
-      reviewerName: "John Doe",
-      reviewerFollowers: 12434,
-      reviewerPhoto: require("../assets/profilepic.png"),
-      reviewContent: `In need of some travel inspiration? Look no further! I recently discovered Munduk Waterfall and it has quickly become my top recommendation for fellow adventurers. From vibrant cities to serene landscapes, this place has something for everyone. 🗺️🌴 #TravelRecommendation #MustVisitDestination #AdventureAwaits`
-    },
-    {
-      title: "Itinerary Plan 1",
-      photo: require("../assets/destination_placeholder.png"),
-      location: "Jogjakarta",
-      days: 3,
-      type: "Nature",
-      price: "3.000k",
-      description: "Liburan kuliah semester 5",
-      likes: 10,
-      duplicates: 10,
-      reviewerName: "John Doe",
-      reviewerFollowers: 12434,
-      reviewerPhoto: require("../assets/profilepic.png"),
-      reviewContent: `In need of some travel inspiration? Look no further! I recently discovered Munduk Waterfall and it has quickly become my top recommendation for fellow adventurers. From vibrant cities to serene landscapes, this place has something for everyone. 🗺️🌴 #TravelRecommendation #MustVisitDestination #AdventureAwaits`
-    },
-  ];
+  const plans = ReviewsDatabase
   return (
     <View style={styles.container}>
       <View style={styles.backButtonRow}>
