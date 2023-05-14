@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
+import CreateItinerary from '../views/CreateItinerary';
 
 const Tab = createBottomTabNavigator();
 
@@ -32,7 +33,7 @@ const YourPlanScreen = () => {
 const CreateScreen = () => {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Create Screen</Text>
+      <CreateItinerary />
     </View>
   );
 };
@@ -60,10 +61,10 @@ const NavigationTab = () => {
         tabBarInactiveTintColor: 'gray',
       })}
     >
-      <Tab.Screen name="home" options={{title: "Home"}} component={HomeScreen} />
-      <Tab.Screen name="create" options={{title: "Create"}} component={CreateScreen} />
-      <Tab.Screen name="your-plan" options={{title: "Your Plan"}} component={YourPlanScreen} />
-      <Tab.Screen name="profile" options={{title: "Profile"}} component={ProfileScreen} />
+      <Tab.Screen name="home" options={{title: "Home", headerShown:false}} component={HomeScreen} />
+      <Tab.Screen name="create" options={{title: "Create", headerShown:false}} component={CreateScreen} />
+      <Tab.Screen name="your-plan" options={{title: "Your Plan", headerShown:false}} component={YourPlanScreen} />
+      <Tab.Screen name="profile" options={{title: "Profile", headerShown:false}} component={ProfileScreen} />
     </Tab.Navigator>
   );
 };
