@@ -89,7 +89,7 @@ function Community() {
   return (
     <View style={styles.container}>
       <View style={styles.backButtonRow}>
-        <Text style={styles.detail}>Your plans</Text>
+        <Text style={styles.detail}>Community</Text>
         <Ionicons name="md-download-outline" size={24} color="black" />
       </View>
       <ScrollView>

@@ -49,15 +49,24 @@ function ItineraryDetail(props) {
   const DestinationComponent = (props) => {
     let destinations = [];
 
-    const handleItineraryPress = () => {
-      navigation.navigate("destination-detail", );
+    const handleItineraryPress = (props) => {
+      navigation.navigate("destination-detail", {
+        // title: "test",
+        // photo: props.photo,
+        // location: props.location,
+        // rating: props.rating,
+        // description: props.description,
+        id: props.id,
+      });
     }
 
     for (let i = 0; i < props.destinations.length; i++) {
       if(selectedDay == props.destinations[i].day - 1) {
         destinations.push(
           <TouchableOpacity key={i} onPress={
-            () => handleItineraryPress(props.destinations[i])
+            () => handleItineraryPress({
+              id: props.destinations[i].id,
+            })
           }>
             <Image
               source={require("../assets/destination_placeholder.png")}
@@ -192,16 +201,19 @@ function ItineraryDetail(props) {
             >
               {DestinationComponent({ destinations: [
                 {
+                  id: 0,
                   name: "Museum Ullen Sentalu",
                   location: "Jl. Boyong No.KM 25, Kaliurang, Hargobinangun",
                   day: 1
                 },
                 {
+                  id: 1,
                   name: "Museum Ullen Sentalu 2",
                   location: "Jl. Boyong No.KM 26, Kaliurang, Hargobinangun",
                   day: 1
                 },
                 {
+                  id: 2,
                   name: "Museum Ullen Sentalu 3",
                   location: "Jl. Boyong No.KM 25, Kaliurang, Hargobinangun",
                   day: 2

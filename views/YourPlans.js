@@ -72,7 +72,7 @@ function YourPlans() {
           <TouchableOpacity key={index} onPress={(plan) => handlePlanPress({
             title: plan.title,
             photo: plan.photo,
-            
+
           })}>
             <PlanBox
               key={index}
@@ -96,6 +96,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#f7f7f7",
+    width: "100%",
+    height: "100%",
   },
   detail: {
     fontFamily: "Montserrat_700Bold",

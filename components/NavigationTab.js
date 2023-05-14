@@ -9,7 +9,7 @@ import DestinationDetail from "../views/DestinationDetail";
 import YourPlans from "../views/YourPlans";
 import Community from "../views/Community";
 import ItineraryDetail from "../views/ItineraryDetail";
-import { DestinationDetailProps } from "../constants/props";
+import { DestinationsDatabase } from "../constants/props";
 
 const Tab = createBottomTabNavigator();
 
@@ -46,15 +46,18 @@ const CreateScreen = () => {
 };
 
 
-const DestinationDetailScreen = () => {
+const DestinationDetailScreen = ({route, navigation}) => {
+  const props = DestinationsDatabase;
+  console.log(props)
+  const { id } = route.params;
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <DestinationDetail
-        title={DestinationDetailProps.title}
-        photo={DestinationDetailProps.photo}
-        location={DestinationDetailProps.location}
-        rating={DestinationDetailProps.rating}
-        description={DestinationDetailProps.description}
+        title={props[id].title}
+        photo={props[id].photo}
+        location={props[id].location}
+        rating={props[id].rating}
+        description={props[id].description}
         before="your-plan"
       />
     </View>
