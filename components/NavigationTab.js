@@ -3,21 +3,14 @@ import { View, Text } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 import CreateItinerary from '../views/CreateItinerary';
+import UnderConstruction from '../views/UnderConstruction';
 
 const Tab = createBottomTabNavigator();
 
 const HomeScreen = () => {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-    </View>
-  );
-};
-
-const ProfileScreen = () => {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Profile Screen</Text>
+      <UnderConstruction />
     </View>
   );
 };
@@ -25,10 +18,19 @@ const ProfileScreen = () => {
 const YourPlanScreen = () => {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Profile Screen</Text>
+      <UnderConstruction />
     </View>
   );
 };
+
+const ProfileScreen = () => {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <UnderConstruction />
+    </View>
+  );
+};
+
 
 const CreateScreen = () => {
   return (
@@ -41,12 +43,13 @@ const CreateScreen = () => {
 const NavigationTab = () => {
   return (
     <Tab.Navigator
+      initialRouteName="create"
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
 
-          if (route.name === 'home') {
-            iconName = focused ? 'home' : 'home-outline';
+          if (route.name === 'community') {
+            iconName = focused ? 'people' : 'people-outline';
           } else if (route.name === 'profile') {
             iconName = focused ? 'person' : 'person-outline';
           } else if (route.name === 'your-plan') {
@@ -60,8 +63,9 @@ const NavigationTab = () => {
         tabBarActiveTintColor: 'blue',
         tabBarInactiveTintColor: 'gray',
       })}
+      
     >
-      <Tab.Screen name="home" options={{title: "Home", headerShown:false}} component={HomeScreen} />
+      <Tab.Screen name="community" options={{title: "Community", headerShown:false}} component={HomeScreen} />
       <Tab.Screen name="create" options={{title: "Create", headerShown:false}} component={CreateScreen} />
       <Tab.Screen name="your-plan" options={{title: "Your Plan", headerShown:false}} component={YourPlanScreen} />
       <Tab.Screen name="profile" options={{title: "Profile", headerShown:false}} component={ProfileScreen} />
