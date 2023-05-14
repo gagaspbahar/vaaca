@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 import CreateItinerary from '../views/CreateItinerary';
 import UnderConstruction from '../views/UnderConstruction';
+import DestinationDetail from '../views/DestinationDetail';
 
 const Tab = createBottomTabNavigator();
 
@@ -40,6 +41,14 @@ const CreateScreen = () => {
   );
 };
 
+const TemporaryScreen = () => {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <DestinationDetail />
+    </View>
+  );
+}
+
 const NavigationTab = () => {
   return (
     <Tab.Navigator
@@ -69,6 +78,7 @@ const NavigationTab = () => {
       <Tab.Screen name="create" options={{title: "Create", headerShown:false}} component={CreateScreen} />
       <Tab.Screen name="your-plan" options={{title: "Your Plan", headerShown:false}} component={YourPlanScreen} />
       <Tab.Screen name="profile" options={{title: "Profile", headerShown:false}} component={ProfileScreen} />
+      <Tab.Screen name="temporary" options={{title: "Temporary", headerShown:false}} component={TemporaryScreen} />
     </Tab.Navigator>
   );
 };
