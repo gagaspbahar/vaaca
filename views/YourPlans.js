@@ -6,6 +6,7 @@ import PlanBox from "../components/PlanBox";
 import { Ionicons } from "@expo/vector-icons";
 import { ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { TouchableOpacity } from "react-native";
 
 function YourPlans() {
   const navigation = useNavigation();
@@ -17,7 +18,7 @@ function YourPlans() {
       days: 3,
       type: "Nature",
       price: "3.000k",
-      description: "Liburan kuliah semester 5"
+      description: "Liburan kuliah semester 5",
     },
     {
       title: "Itinerary Plan 1",
@@ -26,7 +27,7 @@ function YourPlans() {
       days: 3,
       type: "Nature",
       price: "3.000k",
-      description: "Liburan kuliah semester 5"
+      description: "Liburan kuliah semester 5",
     },
     {
       title: "Itinerary Plan 1",
@@ -35,7 +36,7 @@ function YourPlans() {
       days: 3,
       type: "Nature",
       price: "3.000k",
-      description: "Liburan kuliah semester 5"
+      description: "Liburan kuliah semester 5",
     },
     {
       title: "Itinerary Plan 1",
@@ -44,7 +45,7 @@ function YourPlans() {
       days: 3,
       type: "Nature",
       price: "3.000k",
-      description: "Liburan kuliah semester 5"
+      description: "Liburan kuliah semester 5",
     },
     {
       title: "Itinerary Plan 1",
@@ -53,9 +54,13 @@ function YourPlans() {
       days: 3,
       type: "Nature",
       price: "3.000k",
-      description: "Liburan kuliah semester 5"
+      description: "Liburan kuliah semester 5",
     },
   ];
+
+  const handlePlanPress = (props) => {
+    navigation.navigate("itinerary-detail", props);
+  }
   return (
     <View style={styles.container}>
       <View style={styles.backButtonRow}>
@@ -63,8 +68,12 @@ function YourPlans() {
         <Ionicons name="md-download-outline" size={24} color="black" />
       </View>
       <ScrollView>
-        {
-          plans.map((plan, index) => (
+        {plans.map((plan, index) => (
+          <TouchableOpacity key={index} onPress={(plan) => handlePlanPress({
+            title: plan.title,
+            photo: plan.photo,
+            
+          })}>
             <PlanBox
               key={index}
               title={plan.title}
@@ -76,8 +85,8 @@ function YourPlans() {
               description={plan.description}
               style={styles.planBox}
             />
-          ))
-        }
+          </TouchableOpacity>
+        ))}
       </ScrollView>
     </View>
   );

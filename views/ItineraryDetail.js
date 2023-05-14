@@ -3,14 +3,15 @@ import { Ionicons } from "@expo/vector-icons";
 import { Divider } from "react-native-elements";
 import { useState, useEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
+import { DestinationDetailProps } from "../constants/props";
 
 function ItineraryDetail(props) {
 
-  const [selectedDay, setSelectedDay] = useState(1);
+  const [selectedDay, setSelectedDay] = useState(0);
 
   const DayComponent = (props) => {
     let days = [];
-    const [selected, setSelected] = useState(1);
+    const [selected, setSelected] = useState(0);
     const handleDayPress = (i) => {
       setSelected(i);
       setSelectedDay(i);
@@ -55,7 +56,9 @@ function ItineraryDetail(props) {
     for (let i = 0; i < props.destinations.length; i++) {
       if(selectedDay == props.destinations[i].day - 1) {
         destinations.push(
-          <TouchableOpacity key={i}>
+          <TouchableOpacity key={i} onPress={
+            () => handleItineraryPress(props.destinations[i])
+          }>
             <Image
               source={require("../assets/destination_placeholder.png")}
               style={styles.destinationImage}
@@ -124,7 +127,7 @@ function ItineraryDetail(props) {
             name="arrow-back"
             size={24}
             color="black"
-            onPress={() => navigation.navigate("your-plan")}
+            onPress={() => navigation.goBack()}
           />
           <Text
             style={{
