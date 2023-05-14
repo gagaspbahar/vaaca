@@ -22,10 +22,16 @@
         "foregroundImage": "./assets/icon-square.png",
         "backgroundColor": "#ffffff"
       },
-      "softwareKeyboardLayoutMode": "pan"
+      "softwareKeyboardLayoutMode": "pan",
+      "package": "com.gagaspbahar.vaaca"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "498a9148-2b09-4722-b076-3bdf95312a7f"
+      }
     }
   }
 }
