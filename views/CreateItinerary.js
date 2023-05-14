@@ -22,6 +22,8 @@ function CreateItinerary(props) {
     { label: "10.000k", value: "10" },
   ]);
 
+  const [city, setCity] = useState("");
+
   const onModeOpen = useCallback(() => {
     setpriceOpen(false);
   });
@@ -29,6 +31,14 @@ function CreateItinerary(props) {
   const onPriceOpen = useCallback(() => {
     setModeOpen(false);
   });
+
+  const handleCityChange = (text) => {
+    setCity(text);
+  }
+
+  const handleDayChange = (text) => {
+    setDay(text);
+  }
 
   const navigation = useNavigation();
   const handleSubmit = () => {
@@ -57,11 +67,11 @@ function CreateItinerary(props) {
           >
             <View>
               <Text style={styles.textLabel}>City</Text>
-              <TextInput placeholder=" Jogjakarta" style={styles.textInput} />
+              <TextInput placeholder=" Jogjakarta" style={styles.textInput} onChangeText={text => handleCityChange(text)} />
             </View>
             <View>
               <Text style={styles.textLabel}>Duration (days)</Text>
-              <TextInput placeholder=" 3" inputMode="numeric" style={styles.textInput} />
+              <TextInput placeholder=" 3" inputMode="numeric" style={styles.textInput} onChangeText={text => handleDayChange(text)} />
             </View>
             <View style={{ zIndex: 3000, zIndexInverse:1000 }}>
               <Text style={styles.textLabel}>Mode</Text>

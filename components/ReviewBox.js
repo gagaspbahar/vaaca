@@ -52,14 +52,14 @@ function RatingBox(props) {
               color: "#3a0ca3",
             }}
           >
-            Dhiya Maharani Bahar
+            {props.reviewerName}
           </Text>
           <Text
             style={{
               fontFamily: "Montserrat_400Regular",
             }}
           >
-            20.546 followers
+            {props.reviewerFollowers} followers
           </Text>
         </View>
       </View>

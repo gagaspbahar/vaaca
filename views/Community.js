@@ -21,6 +21,7 @@ function Community() {
       duplicates: 10,
       reviewerName: "John Doe",
       reviewerPhoto: require("../assets/profilepic.png"),
+      reviewerFollowers: 12434,
       reviewContent: `In need of some travel inspiration? Look no further! I recently discovered Munduk Waterfall and it has quickly become my top recommendation for fellow adventurers. From vibrant cities to serene landscapes, this place has something for everyone. 🗺️🌴 #TravelRecommendation #MustVisitDestination #AdventureAwaits`
     },
     {
@@ -34,6 +35,7 @@ function Community() {
       likes: 10,
       duplicates: 10,
       reviewerName: "John Doe",
+      reviewerFollowers: 12434,
       reviewerPhoto: require("../assets/profilepic.png"),
       reviewContent: `In need of some travel inspiration? Look no further! I recently discovered Munduk Waterfall and it has quickly become my top recommendation for fellow adventurers. From vibrant cities to serene landscapes, this place has something for everyone. 🗺️🌴 #TravelRecommendation #MustVisitDestination #AdventureAwaits`
       
@@ -49,6 +51,7 @@ function Community() {
       likes: 10,
       duplicates: 10,
       reviewerName: "John Doe",
+      reviewerFollowers: 12434,
       reviewerPhoto: require("../assets/profilepic.png"),
       reviewContent: `In need of some travel inspiration? Look no further! I recently discovered Munduk Waterfall and it has quickly become my top recommendation for fellow adventurers. From vibrant cities to serene landscapes, this place has something for everyone. 🗺️🌴 #TravelRecommendation #MustVisitDestination #AdventureAwaits`
     },
@@ -63,6 +66,7 @@ function Community() {
       likes: 10,
       duplicates: 10,
       reviewerName: "John Doe",
+      reviewerFollowers: 12434,
       reviewerPhoto: require("../assets/profilepic.png"),
       reviewContent: `In need of some travel inspiration? Look no further! I recently discovered Munduk Waterfall and it has quickly become my top recommendation for fellow adventurers. From vibrant cities to serene landscapes, this place has something for everyone. 🗺️🌴 #TravelRecommendation #MustVisitDestination #AdventureAwaits`
     },
@@ -77,6 +81,7 @@ function Community() {
       likes: 10,
       duplicates: 10,
       reviewerName: "John Doe",
+      reviewerFollowers: 12434,
       reviewerPhoto: require("../assets/profilepic.png"),
       reviewContent: `In need of some travel inspiration? Look no further! I recently discovered Munduk Waterfall and it has quickly become my top recommendation for fellow adventurers. From vibrant cities to serene landscapes, this place has something for everyone. 🗺️🌴 #TravelRecommendation #MustVisitDestination #AdventureAwaits`
     },
@@ -102,6 +107,7 @@ function Community() {
               likes={plan.likes}
               duplicates={plan.duplicates}
               reviewerName={plan.reviewerName}
+              reviewerFollowers={plan.reviewerFollowers}
               reviewerPhoto={plan.reviewerPhoto}
               reviewContent={plan.reviewContent}
               style={styles.planBox}

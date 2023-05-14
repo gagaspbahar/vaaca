@@ -8,6 +8,7 @@ import UnderConstruction from "../views/UnderConstruction";
 import DestinationDetail from "../views/DestinationDetail";
 import YourPlans from "../views/YourPlans";
 import Community from "../views/Community";
+import ItineraryDetail from "../views/ItineraryDetail";
 
 const Tab = createBottomTabNavigator();
 
@@ -66,7 +67,26 @@ const TemporaryScreen = () => {
   );
 };
 
+const Temporary2Screen = () => {
+  const props = {}
+
+  return (
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <ItineraryDetail />
+    </View>
+  )
+}
+
 const PlanStack = createStackNavigator();
+
+const PlanStackScreen = () => {
+  return (
+    <PlanStack.Navigator>
+      <PlanStack.Screen name="your-plan" component={YourPlanScreen} />
+      <PlanStack.Screen name="itinerary-detail" component={Temporary2Screen}/>
+    </PlanStack.Navigator>
+  )
+}
 
 const NavigationTab = () => {
   return (
@@ -116,6 +136,11 @@ const NavigationTab = () => {
         name="temporary"
         options={{ title: "Temporary", headerShown: false }}
         component={TemporaryScreen}
+      />
+      <Tab.Screen
+        name="temporary2"
+        options={{ title: "Temporary 2", headerShown: false }}
+        component={Temporary2Screen}
       />
     </Tab.Navigator>
   );
