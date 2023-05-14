@@ -7,11 +7,11 @@ function DetailDestinationBox(props) {
     <View style={[styles.container, props.style]}>
       <View style={styles.imageStack}>
         <Image
-          source={require("../assets/destination_placeholder.png")}
+          source={props.photo}
           resizeMode="contain"
           style={styles.image}
         ></Image>
-        <Text style={styles.title}>Museum Ullen Sentalu</Text>
+        <Text style={styles.title}>{props.title}</Text>
         {/* <Svg viewBox="0 0 39.11 39.61" style={styles.ellipse}>
           <Ellipse
             stroke="rgba(216,212,212,1)"
@@ -24,7 +24,7 @@ function DetailDestinationBox(props) {
           ></Ellipse>
         </Svg> */}
       <Text style={styles.location}>
-        Jl. Boyong No.KM 25, Kaliurang, Hargobinangun
+        {props.location}
       </Text>
       </View>
     </View>

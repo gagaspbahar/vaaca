@@ -13,7 +13,7 @@ function RatingBox(props) {
       <Text style={styles.titleText}>Rating</Text>
       <View style={{flexDirection: 'row', alignItems:'center', marginTop:5}}>
         <Ionicons name="star" size={24} color="#FFCC00"></Ionicons>
-        <Text style={styles.ratingText}>4.7</Text>
+        <Text style={styles.ratingText}>{props.rating}</Text>
       </View>
     </View>
     <View style={{
