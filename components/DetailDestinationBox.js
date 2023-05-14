@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
   image: {
     width: "100%",
     height: "100%",
+    marginTop: "5%"
   },
   title: {
     marginTop: -15,

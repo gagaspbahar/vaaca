@@ -15,6 +15,7 @@ function DestinationDetail(props) {
           () => navigation.navigate("your-plan")
         } />
         <Text style={styles.detail}>Detail</Text>
+        <Ionicons name="ellipsis-horizontal-sharp" size={24} color="black" />
       </View>
       <ScrollView>
         <DetailDestinationBox
@@ -42,23 +43,21 @@ const styles = StyleSheet.create({
     fontFamily: "Montserrat_700Bold",
     color: "#3a0ca3",
     fontSize: 18,
-    marginLeft: 88,
-    // marginTop: "2%"
     textAlign: "center",
   },
   backButtonRow: {
     height: 30,
     flexDirection: "row",
     marginTop: "12%",
-    marginLeft: "10%",
     marginBottom: "5%",
     alignItems: "center",
     alignContent: "center",
+    justifyContent: "space-around",
   },
   detailDestinationBox: {
     height: 250,
     width: 304,
-    marginTop: 34,
+    // marginTop: 34,
     marginLeft: 35,
   },
   ratingBox: {
