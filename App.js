@@ -1,16 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Text, View, StyleSheet, Image } from "react-native";
+import { View} from "react-native";
 import SplashScreen from "./components/SplashScreen";
-import { BottomNavigation, BottomNavigationTab } from "react-native-elements";
 import { NavigationContainer } from "@react-navigation/native";
 import NavigationTab from "./components/NavigationTab";
-// import { Icon } from 'react-native-elements';
 import { useFonts } from "expo-font";
 import {
   Montserrat_400Regular,
   Montserrat_700Bold,
 } from "@expo-google-fonts/montserrat";
-import { Button } from "react-native-elements";
 import StartScreen from "./views/StartScreen";
 
 const App = () => {
