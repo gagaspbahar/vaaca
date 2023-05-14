@@ -5,6 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 import CreateItinerary from '../views/CreateItinerary';
 import UnderConstruction from '../views/UnderConstruction';
 import DestinationDetail from '../views/DestinationDetail';
+import YourPlans from '../views/YourPlans';
 
 const Tab = createBottomTabNavigator();
 
@@ -19,7 +20,7 @@ const HomeScreen = () => {
 const YourPlanScreen = () => {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <UnderConstruction />
+      <YourPlans />
     </View>
   );
 };
@@ -76,7 +77,7 @@ const NavigationTab = () => {
     >
       <Tab.Screen name="community" options={{title: "Community", headerShown:false}} component={HomeScreen} />
       <Tab.Screen name="create" options={{title: "Create", headerShown:false}} component={CreateScreen} />
-      <Tab.Screen name="your-plan" options={{title: "Your Plan", headerShown:false}} component={YourPlanScreen} />
+      <Tab.Screen name="your-plan" options={{title: "Your Plans", headerShown:false}} component={YourPlanScreen} />
       <Tab.Screen name="profile" options={{title: "Profile", headerShown:false}} component={ProfileScreen} />
       <Tab.Screen name="temporary" options={{title: "Temporary", headerShown:false}} component={TemporaryScreen} />
     </Tab.Navigator>

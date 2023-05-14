@@ -6,7 +6,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { ScrollView } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 
-function DestinationDetail() {
+function DestinationDetail(props) {
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
