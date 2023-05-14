@@ -1,6 +1,7 @@
 import React from "react";
 import { View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createStackNavigator } from "@react-navigation/stack";
 import { Ionicons } from "@expo/vector-icons";
 import CreateItinerary from "../views/CreateItinerary";
 import UnderConstruction from "../views/UnderConstruction";
@@ -59,10 +60,13 @@ const TemporaryScreen = () => {
         location={props.location}
         rating={props.rating}
         description={props.description}
+        before="your-plan"
       />
     </View>
   );
 };
+
+const PlanStack = createStackNavigator();
 
 const NavigationTab = () => {
   return (

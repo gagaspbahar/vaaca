@@ -12,7 +12,7 @@ function DestinationDetail(props) {
     <View style={styles.container}>
       <View style={styles.backButtonRow}>
         <Ionicons name="arrow-back" size={24} color="black" onPress={
-          () => navigation.navigate("your-plan")
+          () => navigation.navigate(props.before)
         } />
         <Text style={styles.detail}>Detail</Text>
         <Ionicons name="ellipsis-horizontal-sharp" size={24} color="black" />
