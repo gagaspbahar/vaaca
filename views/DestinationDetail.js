@@ -5,6 +5,7 @@ import RatingBox from "../components/RatingBox";
 import { Ionicons } from "@expo/vector-icons";
 import { ScrollView } from "react-native";
 import { useNavigation } from '@react-navigation/native';
+import { Divider } from "react-native-elements";
 
 function DestinationDetail(props) {
   const navigation = useNavigation();
@@ -17,7 +18,11 @@ function DestinationDetail(props) {
         <Text style={styles.detail}>Detail</Text>
         <Ionicons name="ellipsis-horizontal-sharp" size={24} color="black" />
       </View>
-      <ScrollView>
+      <ScrollView styles={{
+        flex: 1,
+        alignContent: "center",
+        alignItems: "center",
+      }}>
         <DetailDestinationBox
           style={styles.detailDestinationBox}
           title={props.title}
@@ -56,16 +61,16 @@ const styles = StyleSheet.create({
   },
   detailDestinationBox: {
     height: 250,
-    width: 304,
+    width: "80%",
     // marginTop: 34,
-    marginLeft: 35,
+    marginHorizontal: 35,
   },
   ratingBox: {
     height: 82,
-    width: 304,
+    width: "80%",
     backgroundColor: "#fff",
     marginTop: 28,
-    marginLeft: 35,
+    marginHorizontal: 35,
   },
   aboutDestination: {
     fontFamily: "Montserrat_700Bold",

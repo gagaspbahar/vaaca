@@ -33,8 +33,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#4144cb"
   },
   image: {
-    width: 414,
-    height: 673,
+    width: "100%",
+    maxHeight: "90%",
     alignSelf: "center"
   },
   rect: {

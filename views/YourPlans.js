@@ -1,64 +1,15 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Text } from "react-native";
-import DetailDestinationBox from "../components/DetailDestinationBox";
-import RatingBox from "../components/RatingBox";
 import PlanBox from "../components/PlanBox";
 import { Ionicons } from "@expo/vector-icons";
 import { ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { TouchableOpacity } from "react-native";
-import { ItineraryDatabase, DestinationsDatabase } from "../constants/props";
+import { ItineraryDatabase} from "../constants/props";
 
 function YourPlans() {
   const navigation = useNavigation();
   const plans = ItineraryDatabase;
-  // [
-  //   {
-  //     title: "Itinerary Plan 1",
-  //     photo: require("../assets/destination_placeholder.png"),
-  //     location: "Jogjakarta",
-  //     days: 3,
-  //     type: "Nature",
-  //     price: "3.000k",
-  //     description: "Liburan kuliah semester 5",
-  //   },
-  //   {
-  //     title: "Itinerary Plan 1",
-  //     photo: require("../assets/destination_placeholder.png"),
-  //     location: "Jogjakarta",
-  //     days: 3,
-  //     type: "Nature",
-  //     price: "3.000k",
-  //     description: "Liburan kuliah semester 5",
-  //   },
-  //   {
-  //     title: "Itinerary Plan 1",
-  //     photo: require("../assets/destination_placeholder.png"),
-  //     location: "Jogjakarta",
-  //     days: 3,
-  //     type: "Nature",
-  //     price: "3.000k",
-  //     description: "Liburan kuliah semester 5",
-  //   },
-  //   {
-  //     title: "Itinerary Plan 1",
-  //     photo: require("../assets/destination_placeholder.png"),
-  //     location: "Jogjakarta",
-  //     days: 3,
-  //     type: "Nature",
-  //     price: "3.000k",
-  //     description: "Liburan kuliah semester 5",
-  //   },
-  //   {
-  //     title: "Itinerary Plan 1",
-  //     photo: require("../assets/destination_placeholder.png"),
-  //     location: "Jogjakarta",
-  //     days: 3,
-  //     type: "Nature",
-  //     price: "3.000k",
-  //     description: "Liburan kuliah semester 5",
-  //   },
-  // ];
 
   const handlePlanPress = (props) => {
     navigation.navigate("itinerary-detail", {

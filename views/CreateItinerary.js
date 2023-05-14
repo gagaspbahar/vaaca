@@ -3,6 +3,7 @@ import { Button, TextInput } from "react-native";
 import { StyleSheet, View, Image, Text } from "react-native";
 import DropDownPicker from "react-native-dropdown-picker";
 import { useNavigation } from "@react-navigation/native";
+import { ItineraryDatabase, DestinationsDatabase } from "../constants/props";
 
 function CreateItinerary(props) {
   const [modeOpen, setModeOpen] = useState(false);
@@ -23,6 +24,7 @@ function CreateItinerary(props) {
   ]);
 
   const [city, setCity] = useState("");
+  const [day, setDay] = useState("");
 
   const onModeOpen = useCallback(() => {
     setpriceOpen(false);
@@ -42,6 +44,7 @@ function CreateItinerary(props) {
 
   const navigation = useNavigation();
   const handleSubmit = () => {
+
     navigation.navigate("your-plan");
   }
 
@@ -65,15 +68,15 @@ function CreateItinerary(props) {
               justifyContent: "space-evenly",
             }}
           >
-            <View>
+            <View style={{marginBottom:"5%"}}>
               <Text style={styles.textLabel}>City</Text>
               <TextInput placeholder=" Jogjakarta" style={styles.textInput} onChangeText={text => handleCityChange(text)} />
             </View>
-            <View>
+            <View style={{marginBottom:"5%"}}>
               <Text style={styles.textLabel}>Duration (days)</Text>
               <TextInput placeholder=" 3" inputMode="numeric" style={styles.textInput} onChangeText={text => handleDayChange(text)} />
             </View>
-            <View style={{ zIndex: 3000, zIndexInverse:1000 }}>
+            <View style={{ zIndex: 3000, zIndexInverse:1000, marginBottom:"5%"}}>
               <Text style={styles.textLabel}>Mode</Text>
               <DropDownPicker
                 open={modeOpen}
@@ -88,7 +91,7 @@ function CreateItinerary(props) {
                 dropDownDirection="TOP"
               />
             </View>
-            <View style={{ zIndex: 3001, zIndexInverse:3000 }}>
+            <View style={{ zIndex: 3001, zIndexInverse:3000, marginBottom:"5%" }}>
               <Text style={styles.textLabel}>Budget Range</Text>
               <DropDownPicker
                 open={priceOpen}
@@ -120,7 +123,8 @@ const styles = StyleSheet.create({
   image: {
     top: 0,
     width: "100%",
-    height: "33%",
+    // height: "33%",
+    marginTop: -10,
     position: "absolute",
     left: 0,
   },
@@ -129,6 +133,8 @@ const styles = StyleSheet.create({
     left: "10%",
     width: "80%",
     height: "65%",
+    paddingBottom: "10%",
+    marginBottom:"5%",
     position: "absolute",
     backgroundColor: "rgba(255,255,255,1)",
     shadowColor: "rgba(216,212,212,1)",
@@ -167,7 +173,7 @@ const styles = StyleSheet.create({
   textLabel: {
     fontSize: 14,
     fontFamily: "Montserrat_700Bold",
-    marginBottom: 5,
+    marginBottom: "1%",
   },
   textInput: {
     borderWidth: 0.5,

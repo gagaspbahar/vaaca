@@ -28,7 +28,7 @@ const DestinationsDatabase = [
   },
   {
     name: "Waduk Sermo",
-    location: "Plunyon Kali Kuning Desa Umbulharjo Jogjakarta",
+    location: "Plunyon Kali Kuning Desa Umbulharjo",
     title: "Waduk Sermo",
     photo: require("../assets/waduk-sermo.png"),
     rating: 4.3,

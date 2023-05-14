@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Image, Text } from "react-native";
-// import Svg, { Ellipse } from "react-native-svg";
 
 function DetailDestinationBox(props) {
   return (
@@ -12,17 +11,6 @@ function DetailDestinationBox(props) {
           style={styles.image}
         ></Image>
         <Text style={styles.title}>{props.title}</Text>
-        {/* <Svg viewBox="0 0 39.11 39.61" style={styles.ellipse}>
-          <Ellipse
-            stroke="rgba(216,212,212,1)"
-            strokeWidth={0}
-            fill="rgba(255,255,255,1)"
-            cx={20}
-            cy={20}
-            rx={20}
-            ry={20}
-          ></Ellipse>
-        </Svg> */}
       <Text style={styles.location}>
         {props.location}
       </Text>
@@ -59,7 +47,10 @@ const styles = StyleSheet.create({
     width: 265,
     height: 218,
     marginTop: "-7%",
-    marginLeft: "5%",
+    marginHorizontal: "7%",
+    alignContent: "center",
+    // alignItems: "center",
+
   },
   location: {
     fontFamily: "Montserrat_700Bold",
