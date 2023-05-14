@@ -6,13 +6,14 @@ import CreateItinerary from "../views/CreateItinerary";
 import UnderConstruction from "../views/UnderConstruction";
 import DestinationDetail from "../views/DestinationDetail";
 import YourPlans from "../views/YourPlans";
+import Community from "../views/Community";
 
 const Tab = createBottomTabNavigator();
 
-const HomeScreen = () => {
+const CommunityScreen = () => {
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <UnderConstruction />
+      <Community />
     </View>
   );
 };
@@ -90,7 +91,7 @@ const NavigationTab = () => {
       <Tab.Screen
         name="community"
         options={{ title: "Community", headerShown: false }}
-        component={HomeScreen}
+        component={CommunityScreen}
       />
       <Tab.Screen
         name="create"
